@@ -1,12 +1,63 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect, useCallback } from "react";
+import HeroSection from "@/components/HeroSection";
+import StickyNav from "@/components/StickyNav";
+import ExecutiveSummary from "@/components/ExecutiveSummary";
+import EventOverview from "@/components/EventOverview";
+import MetricsSection from "@/components/MetricsSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ImpactSection from "@/components/ImpactSection";
+import ResultsSection from "@/components/ResultsSection";
+import GallerySection from "@/components/GallerySection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState("");
+
+  const handleNavigate = useCallback((sectionId: string) => {
+    if (sectionId === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["metricas", "experiencia", "impacto", "resultados", "galeria"];
+      const scrollPosition = window.scrollY + 200;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            return;
+          }
+        }
+      }
+      setActiveSection("");
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <StickyNav onNavigate={handleNavigate} activeSection={activeSection} />
+      <HeroSection onNavigate={handleNavigate} />
+      <ExecutiveSummary />
+      <EventOverview />
+      <MetricsSection />
+      <ExperienceSection />
+      <ImpactSection />
+      <ResultsSection />
+      <GallerySection />
+      <Footer />
     </div>
   );
 };
