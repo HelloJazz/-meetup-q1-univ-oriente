@@ -1,41 +1,41 @@
-import { Check, AlertTriangle, Clock } from "lucide-react";
+import { Check, AlertTriangle, Clock, Trophy } from "lucide-react";
 
 const ResultsSection = () => {
   const goals = [
     {
-      goal: "Ejecutar según calendario",
+      goal: "Execute according to calendar",
       target: "✓",
-      achievement: "28 enero, 2026",
+      achievement: "January 28, 2026",
       status: "complete",
     },
     {
-      goal: "Currículo de 3 tracks",
+      goal: "3-track curriculum",
       target: "✓",
-      achievement: "Todos entregados",
+      achievement: "All delivered",
       status: "complete",
     },
     {
-      goal: "Streaming en vivo",
+      goal: "Live streaming",
       target: "✓",
-      achievement: "469 vistas",
+      achievement: "469 views",
       status: "complete",
     },
     {
-      goal: "Distribución POAP",
+      goal: "POAP distribution",
       target: "70%+",
       achievement: "46%",
       status: "warning",
     },
     {
-      goal: "Construir comunidad",
+      goal: "Build community",
       target: "20-30",
-      achievement: "18+469 remoto",
+      achievement: "18 + 469 remote",
       status: "complete",
     },
     {
-      goal: "Satisfacción",
+      goal: "Satisfaction",
       target: ">3.5/5",
-      achievement: "Pendiente",
+      achievement: "Pending",
       status: "progress",
     },
   ];
@@ -67,14 +67,14 @@ const ResultsSection = () => {
   };
 
   return (
-    <section id="resultados" className="section-container bg-muted/30">
+    <section id="resultados" className="section-container" style={{ backgroundColor: 'hsla(210, 4.7%, 83.1%, 0.3)' }}>
       <div className="max-w-4xl mx-auto">
         <h2 className="section-title text-center">
-          <span className="mr-3">🏆</span>
-          <span className="text-brand-yellow">Resultados</span>
+          <Trophy className="w-8 h-8 md:w-10 md:h-10 inline-block mr-3 text-brand-yellow" />
+          <span className="text-brand-yellow">Results</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg">
-          Benchmarking contra Objetivos de Red
+          Benchmarking against Network Objectives
         </p>
 
         <div className="card-frutal overflow-hidden">
@@ -82,10 +82,10 @@ const ResultsSection = () => {
             <table className="w-full">
               <thead>
                 <tr className="bg-brand-dark-blue text-white">
-                  <th className="text-left py-4 px-6 font-semibold">Objetivo</th>
-                  <th className="text-center py-4 px-4 font-semibold">Meta</th>
-                  <th className="text-center py-4 px-4 font-semibold">Logro</th>
-                  <th className="text-center py-4 px-4 font-semibold">Estado</th>
+                  <th className="text-left py-4 px-6 font-semibold">Objective</th>
+                  <th className="text-center py-4 px-4 font-semibold">Target</th>
+                  <th className="text-center py-4 px-4 font-semibold">Achievement</th>
+                  <th className="text-center py-4 px-4 font-semibold">Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -113,19 +113,19 @@ const ResultsSection = () => {
             <div className="w-4 h-4 bg-emerald-100 rounded flex items-center justify-center">
               <Check className="w-3 h-3 text-emerald-600" />
             </div>
-            <span className="text-sm text-muted-foreground">Completado</span>
+            <span className="text-sm text-muted-foreground">Completed</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-amber-100 rounded flex items-center justify-center">
               <AlertTriangle className="w-3 h-3 text-amber-500" />
             </div>
-            <span className="text-sm text-muted-foreground">Por debajo de meta</span>
+            <span className="text-sm text-muted-foreground">Below goal</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-secondary rounded flex items-center justify-center">
               <Clock className="w-3 h-3 text-brand-light-blue" />
             </div>
-            <span className="text-sm text-muted-foreground">En progreso</span>
+            <span className="text-sm text-muted-foreground">In progress</span>
           </div>
         </div>
       </div>

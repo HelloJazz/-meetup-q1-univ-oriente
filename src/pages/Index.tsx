@@ -7,7 +7,9 @@ import MetricsSection from "@/components/MetricsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ImpactSection from "@/components/ImpactSection";
 import ResultsSection from "@/components/ResultsSection";
+import FinancialSection from "@/components/FinancialSection";
 import GallerySection from "@/components/GallerySection";
+import PhotoGallery from "@/components/PhotoGallery";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -26,7 +28,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["metricas", "experiencia", "impacto", "resultados", "galeria"];
+      const sections = ["metricas", "experiencia", "impacto", "media", "photo-gallery"];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -55,8 +57,9 @@ const Index = () => {
       <MetricsSection />
       <ExperienceSection />
       <ImpactSection />
-      <ResultsSection />
+      <FinancialSection />
       <GallerySection />
+      <PhotoGallery />
       <Footer />
     </div>
   );

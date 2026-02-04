@@ -1,27 +1,34 @@
-import { Youtube, Twitter, Award, Megaphone, ExternalLink } from "lucide-react";
+import { Youtube, Award, Megaphone, ExternalLink, Camera } from "lucide-react";
+
+// Custom X (formerly Twitter) icon
+const XIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+  </svg>
+);
 
 const GallerySection = () => {
   const mediaLinks = [
     {
-      title: "Grabación YouTube",
+      title: "YouTube Recording",
       icon: <Youtube className="w-8 h-8" />,
       link: "https://www.youtube.com/live/Ak0iPq8LjP8",
       bgColor: "bg-brand-red",
     },
     {
-      title: "Grabación X/Twitter",
-      icon: <Twitter className="w-8 h-8" />,
+      title: "X Recording",
+      icon: <XIcon className="w-8 h-8" />,
       link: "https://x.com/i/broadcasts/1kvJpMvLnboxE",
       bgColor: "bg-brand-dark-blue",
     },
     {
-      title: "Colección POAP",
+      title: "POAP Collection",
       icon: <Award className="w-8 h-8" />,
       link: "https://collectors.poap.xyz/mint-website/across-build-case",
       bgColor: "bg-brand-light-blue",
     },
     {
-      title: "Anuncio Oficial",
+      title: "Official Announcement",
       icon: <Megaphone className="w-8 h-8" />,
       link: "https://x.com/fruteroclub/status/2016986018449084779",
       bgColor: "bg-brand-yellow",
@@ -33,21 +40,21 @@ const GallerySection = () => {
     { handle: "@EstefhanyMV", platform: "X/Twitter" },
     { handle: "@waralotito", platform: "X/Twitter" },
     { handle: "@obag7", platform: "X/Twitter" },
-    { handle: "@fruteroclub", platform: "X/Twitter (Oficial)" },
+    { handle: "@driade_1", platform: "X/Twitter" },
+    { handle: "@fruteroclub", platform: "X/Twitter (Official)" },
   ];
 
   return (
-    <section id="galeria" className="section-container">
+    <section id="media" className="section-container pb-4 md:pb-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="section-title text-center">
-          <span className="mr-3">📸</span>
-          <span className="text-brand-red">Galería</span>
+        <h2 className="section-title text-center text-gray-400">
+          <Camera className="w-8 h-8 md:w-10 md:h-10 inline-block mr-3 text-gray-400" />
+          <span>Media</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg">Media y Enlaces</p>
 
         {/* Content Archive */}
         <div className="mb-16">
-          <h3 className="text-xl font-bold text-brand-dark-blue mb-6">Archivo de Contenido</h3>
+          <h3 className="text-xl font-bold text-brand-dark-blue mb-6">Content Archive</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {mediaLinks.map((item, index) => (
               <a
@@ -69,7 +76,7 @@ const GallerySection = () => {
 
         {/* Social Mentions */}
         <div>
-          <h3 className="text-xl font-bold text-brand-dark-blue mb-6">Menciones en Redes Sociales</h3>
+          <h3 className="text-xl font-bold text-brand-dark-blue mb-6">Social Media Mentions</h3>
           <div className="card-frutal">
             <div className="flex flex-wrap gap-3">
               {socialMentions.map((mention, index) => (
@@ -77,14 +84,14 @@ const GallerySection = () => {
                   key={index}
                   className="px-4 py-2 bg-muted rounded-full text-sm font-medium flex items-center gap-2"
                 >
-                  <Twitter className="w-4 h-4 text-brand-dark-blue" />
+                  <XIcon className="w-4 h-4 text-brand-dark-blue" />
                   {mention.handle}
                 </div>
               ))}
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Participantes y colaboradores compartieron su experiencia en redes sociales, 
-              amplificando el alcance del evento y construyendo momentum para futuros meetups.
+              Participants and collaborators shared their experience on social media,
+              amplifying the reach of the event and building momentum for future meetups.
             </p>
           </div>
         </div>

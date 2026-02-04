@@ -1,38 +1,103 @@
-import { BookOpen, Users, Lightbulb, Trophy, CalendarCheck } from "lucide-react";
+import { BookOpen, Users, Lightbulb, Trophy, CalendarCheck, Target, Check, AlertTriangle, Clock } from "lucide-react";
 
 const ImpactSection = () => {
   const knowledgePoints = [
-    "Comprensión básica de wallets y transacciones on-chain",
-    "Familiaridad con conceptos de DeFi y protocolos principales",
-    "Exposición a herramientas de AI para Web3",
-    "Entendimiento del ecosistema Ethereum en México",
+    "Basic understanding of wallets and on-chain transactions",
+    "Familiarity with DeFi concepts and core protocols",
+    "Exposure to AI tools for Web3",
+    "Understanding of the Ethereum ecosystem",
   ];
 
   const communityPoints = [
-    "Nuevas conexiones entre desarrolladores y entusiastas",
-    "Formación de equipos para hackathons",
-    "Compromiso de participación en eventos futuros",
+    "New connections formed between attendees (developers and enthusiasts)",
+    "Integration of new members into existing Frutero community",
+    "Commitment to participate in future events",
   ];
 
   const projectPoints = [
-    "Ideas de DApps para el mercado mexicano",
-    "Propuestas de herramientas educativas",
-    "Conceptos para integración de AI en Web3",
-    "Proyectos de impacto social con blockchain",
+    "DeFi protocols and interest rates",
+    "Building with AI and Vibe Coding",
+    "Automated crypto payment bots",
+    "Social impact projects with blockchain",
   ];
+
+  const goals = [
+    {
+      goal: "Execute according to calendar",
+      target: "✓",
+      achievement: "January 28, 2026",
+      status: "complete",
+    },
+    {
+      goal: "3-track curriculum",
+      target: "✓",
+      achievement: "All delivered",
+      status: "complete",
+    },
+    {
+      goal: "Live streaming",
+      target: "✓",
+      achievement: "469 views",
+      status: "complete",
+    },
+    {
+      goal: "POAP distribution",
+      target: "70%+",
+      achievement: "46%",
+      status: "warning",
+    },
+    {
+      goal: "Build community",
+      target: "20-30",
+      achievement: "18 + 469 remote",
+      status: "complete",
+    },
+    {
+      goal: "Satisfaction",
+      target: "4/5",
+      achievement: "80%",
+      status: "complete",
+    },
+  ];
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case "complete":
+        return <Check className="w-5 h-5 text-emerald-600" />;
+      case "warning":
+        return <AlertTriangle className="w-5 h-5 text-amber-500" />;
+      case "progress":
+        return <Clock className="w-5 h-5 text-brand-light-blue" />;
+      default:
+        return null;
+    }
+  };
+
+  const getStatusBg = (status: string) => {
+    switch (status) {
+      case "complete":
+        return "bg-emerald-50";
+      case "warning":
+        return "bg-amber-50";
+      case "progress":
+        return "bg-secondary/30";
+      default:
+        return "";
+    }
+  };
 
   return (
     <section id="impacto" className="section-container">
       <div className="max-w-6xl mx-auto">
-        <h2 className="section-title text-center">
-          <span className="mr-3">🎯</span>
-          <span className="text-brand-light-blue">Impacto</span>
+        <h2 className="section-title text-center text-brand-yellow">
+          <Target className="w-8 h-8 md:w-10 md:h-10 inline-block mr-3 text-brand-yellow" />
+          <span>Impact</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg">Evaluación de Resultados</p>
+        <p className="text-center text-muted-foreground mb-12 text-lg">Results Evaluation</p>
 
         {/* Immediate Outcomes */}
         <div className="mb-16">
-          <h3 className="text-xl font-bold text-brand-dark-blue mb-8">Resultados Inmediatos</h3>
+          <h3 className="text-xl font-bold text-brand-dark-blue mb-8">Immediate Outcomes</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {/* Knowledge */}
             <div className="card-frutal">
@@ -40,7 +105,7 @@ const ImpactSection = () => {
                 <div className="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center">
                   <BookOpen className="w-6 h-6 text-brand-red" />
                 </div>
-                <h4 className="font-bold text-brand-dark-blue">Adquisición de Conocimiento</h4>
+                <h4 className="font-bold text-brand-dark-blue">Knowledge Acquisition</h4>
               </div>
               <ul className="space-y-2">
                 {knowledgePoints.map((point, idx) => (
@@ -58,7 +123,7 @@ const ImpactSection = () => {
                 <div className="w-12 h-12 bg-brand-dark-blue/10 rounded-xl flex items-center justify-center">
                   <Users className="w-6 h-6 text-brand-dark-blue" />
                 </div>
-                <h4 className="font-bold text-brand-dark-blue">Construcción de Comunidad</h4>
+                <h4 className="font-bold text-brand-dark-blue">Community Building</h4>
               </div>
               <ul className="space-y-2">
                 {communityPoints.map((point, idx) => (
@@ -76,7 +141,7 @@ const ImpactSection = () => {
                 <div className="w-12 h-12 bg-brand-yellow/20 rounded-xl flex items-center justify-center">
                   <Lightbulb className="w-6 h-6 text-brand-yellow" />
                 </div>
-                <h4 className="font-bold text-brand-dark-blue">Ideación de Proyectos</h4>
+                <h4 className="font-bold text-brand-dark-blue">Project Ideation</h4>
               </div>
               <ul className="space-y-2">
                 {projectPoints.map((point, idx) => (
@@ -88,23 +153,71 @@ const ImpactSection = () => {
               </ul>
             </div>
           </div>
+          {/* Results Benchmarking */}
+          <div className="mt-20 mb-16">
+            <h3 className="text-xl font-bold text-brand-dark-blue mb-3">Results Benchmarking</h3>
+            <div className="card-frutal overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-brand-dark-blue text-white">
+                      <th className="text-left py-4 px-6 font-semibold">Objective</th>
+                      <th className="text-center py-4 px-4 font-semibold">Target</th>
+                      <th className="text-center py-4 px-4 font-semibold">Achievement</th>
+                      <th className="text-center py-4 px-4 font-semibold">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {goals.map((item, index) => (
+                      <tr
+                        key={index}
+                        className={`border-b border-border last:border-0 ${getStatusBg(item.status)}`}
+                      >
+                        <td className="py-4 px-6 font-medium text-sm md:text-base">{item.goal}</td>
+                        <td className="py-4 px-4 text-center text-muted-foreground text-sm">{item.target}</td>
+                        <td className="py-4 px-4 text-center font-semibold text-sm md:text-base">{item.achievement}</td>
+                        <td className="py-4 px-4">
+                          <div className="flex justify-center">{getStatusIcon(item.status)}</div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Legend */}
+            <div className="flex flex-wrap justify-center gap-6 mt-6">
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-emerald-100 rounded flex items-center justify-center">
+                  <Check className="w-3 h-3 text-emerald-600" />
+                </div>
+                <span className="text-sm text-muted-foreground">Completed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-amber-100 rounded flex items-center justify-center">
+                  <AlertTriangle className="w-3 h-3 text-amber-500" />
+                </div>
+                <span className="text-sm text-muted-foreground">Below goal</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Future Engagement */}
         <div>
-          <h3 className="text-xl font-bold text-brand-dark-blue mb-8">Compromiso Futuro</h3>
+          <h3 className="text-xl font-bold text-brand-dark-blue mb-8">Future Engagement</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="card-frutal bg-gradient-to-br from-brand-red/5 to-brand-red/10 border border-brand-red/20">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 bg-brand-red rounded-xl flex items-center justify-center">
                   <Trophy className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-brand-red">Participación en Hackathon</h4>
+                <h4 className="text-xl font-bold text-brand-red">Hackathon Participation</h4>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Varios participantes expresaron interés y compromiso en formar equipos para HackMoney 
-                y otros hackathons del ecosistema. Se identificaron perfiles complementarios entre 
-                desarrolladores, diseñadores y product managers.
+                Several participants expressed interest and commitment to form teams for HackMoney
+                and other ecosystem hackathons. Complementary profiles were identified for future collaborations.
               </p>
             </div>
 
@@ -113,15 +226,15 @@ const ImpactSection = () => {
                 <div className="w-14 h-14 bg-brand-dark-blue rounded-xl flex items-center justify-center">
                   <CalendarCheck className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-brand-dark-blue">Compromiso para Q2</h4>
+                <h4 className="text-xl font-bold text-brand-dark-blue">Commitment for Q2</h4>
               </div>
               <div className="text-center py-4 mb-4">
-                <div className="text-5xl font-bold text-brand-dark-blue">100%</div>
-                <p className="text-muted-foreground mt-2">Intención de retorno</p>
+                <div className="text-5xl font-bold text-brand-dark-blue">90%+</div>
+                <p className="text-muted-foreground mt-2">Overall Interest</p>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Todos los asistentes presenciales expresaron entusiasmo por asistir al próximo 
-                Meetup Frutal en Q2, destacando el valor del contenido y las conexiones formadas.
+                The majority of in-person attendees and remote participants expressed strong enthusiasm for the upcoming
+                Frutal Meetups in Q2, highlighting the high value of the content and connections.
               </p>
             </div>
           </div>
