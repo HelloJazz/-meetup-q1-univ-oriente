@@ -5,7 +5,7 @@ const PhotoGallery = () => {
         { src: "/1.jpg", alt: "Event Photo 1" },
         { src: "/2.jpg", alt: "Event Photo 2" },
         { src: "/3.jpg", alt: "Event Photo 3" },
-        { src: "/4.jpg", alt: "Event Photo 4" },
+        { src: "/12.jpg", alt: "Event Photo 4" },
     ];
 
     const secondRowImages = [
