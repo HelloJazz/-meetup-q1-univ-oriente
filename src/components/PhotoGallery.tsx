@@ -2,29 +2,29 @@ import { Image as ImageIcon } from "lucide-react";
 
 const PhotoGallery = () => {
     const verticalImages = [
-        { src: "/1.jpg", alt: "Event Photo 1" },
-        { src: "/2.jpg", alt: "Event Photo 2" },
-        { src: "/3.jpg", alt: "Event Photo 3" },
-        { src: "/12.jpg", alt: "Event Photo 4" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053949/1_cq5u0x.jpg", alt: "Event Photo 1" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053950/2_mj2phv.jpg", alt: "Event Photo 2" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053951/3_dldpph.jpg", alt: "Event Photo 3" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053961/12_dppj8b.jpg", alt: "Event Photo 4" },
     ];
 
     const secondRowImages = [
-        { src: "/5.jpg", alt: "Event Photo 5" },
-        { src: "/6.jpg", alt: "Event Photo 6" },
-        { src: "/7.jpg", alt: "Event Photo 7" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053953/5_b6klzt.jpg", alt: "Event Photo 5" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053953/6_pdpn13.jpg", alt: "Event Photo 6" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053955/7_dtz0oa.jpg", alt: "Event Photo 7" },
     ];
 
     const thirdRowImages = [
-        { src: "/8.png", alt: "Event Photo 8" },
-        { src: "/9.png", alt: "Event Photo 9" },
-        { src: "/10.png", alt: "Event Photo 10" },
-        { src: "/11.jpg", alt: "Event Photo 11" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053955/8_rqxgis.png", alt: "Event Photo 8" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053957/9_sdldlj.png", alt: "Event Photo 9" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053958/10_itue3x.png", alt: "Event Photo 10" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053960/11_cpiulq.jpg", alt: "Event Photo 11" },
     ];
 
     const finalImages = [
-        { src: "/12.png", alt: "Event Photo 12" },
-        { src: "/13.png", alt: "Event Photo 13" },
-        { src: "/14.png", alt: "Event Photo 14" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053947/12_llh5w4.png", alt: "Event Photo 12" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053947/13_vdrvh4.png", alt: "Event Photo 13" },
+        { src: "https://res.cloudinary.com/dpzywidxy/image/upload/v1772053948/14_tkzjla.png", alt: "Event Photo 14" },
     ];
 
     return (

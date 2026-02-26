@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { BarChart3, BookOpen, Target, Trophy, Camera } from "lucide-react";
-import logoFrutero from "@/assets/logo-frutero.png";
+const logoFrutero = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772056454/logo-frutero_uu089k.png";
 
 interface StickyNavProps {
   onNavigate: (sectionId: string) => void;

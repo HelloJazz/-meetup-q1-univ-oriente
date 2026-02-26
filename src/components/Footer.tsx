@@ -1,8 +1,8 @@
 import { Mail } from "lucide-react";
-import logoFrutero from "@/assets/logo-frutero.png";
-import localismLogo from "@/assets/localism-fund-logo.png";
-import ethCincoLogo from "@/assets/eth-cinco-de-mayo-logo.png";
-import ethereumLogo from "@/assets/ethereum-logo.png";
+const logoFrutero = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772056454/logo-frutero_uu089k.png";
+const localismLogo = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772056438/LocalismFund-logo-white_wfr9jk.png";
+const ethCincoLogo = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772056432/ETHCincoDeMayo-logo_mcnmhs.png";
+const ethereumLogo = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772062679/ethereum-logo_bdanwa.png";
 
 const Footer = () => {
   return (

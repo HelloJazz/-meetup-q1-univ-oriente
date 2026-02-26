@@ -1,11 +1,11 @@
 import { MapPin, BarChart3, BookOpen, Target, Trophy, Camera } from "lucide-react";
-import logoFrutero from "@/assets/logo-frutero.png";
-import localismLogo from "@/assets/localism-fund-logo.png";
-import ethCincoLogo from "@/assets/eth-cinco-de-mayo-logo.png";
-import ethereumLogo from "@/assets/ethereum-logo.png";
-import pina from "@/assets/pina.png";
-import naranja from "@/assets/naranja.png";
-import uva from "@/assets/uva.png";
+const logoFrutero = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772056454/logo-frutero_uu089k.png";
+const localismLogo = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772056438/LocalismFund-logo-white_wfr9jk.png";
+const ethCincoLogo = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772056432/ETHCincoDeMayo-logo_mcnmhs.png";
+const ethereumLogo = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772062679/ethereum-logo_bdanwa.png";
+const pina = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772061203/pina_j6618d.png";
+const naranja = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772061199/naranja_j3g5dm.png";
+const uva = "https://res.cloudinary.com/dpzywidxy/image/upload/v1772061206/uva_r0mv6p.png";
 
 interface HeroSectionProps {
   onNavigate: (sectionId: string) => void;

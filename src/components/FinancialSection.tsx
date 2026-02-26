@@ -21,24 +21,43 @@ const FinancialSection = () => {
                 </p>
 
                 <div className="card-frutal overflow-hidden">
-                    <div className="space-y-6">
-                        <div className="grid grid-cols-1 gap-4">
+                    <div className="flex flex-col md:flex-row gap-6">
+                        {/* Left column - Budget items */}
+                        <div className="md:w-[30%] flex flex-col gap-3">
                             {budgetItems.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-center justify-between p-4 rounded-lg bg-background border border-border hover:border-brand-dark-blue/30 transition-colors"
+                                    className="flex items-center p-3 rounded-2xl bg-background border border-border hover:border-brand-dark-blue/30 transition-colors"
                                 >
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-10 h-10 bg-brand-dark-blue/10 rounded-full flex items-center justify-center">
-                                            <CheckCircle2 className="w-5 h-5 text-brand-dark-blue" />
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-8 h-8 bg-brand-dark-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <CheckCircle2 className="w-4 h-4 text-brand-dark-blue" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-brand-dark-blue">{item.name}</h4>
-                                            <p className="text-sm text-muted-foreground">{item.description}</p>
+                                            <h4 className="font-bold text-brand-dark-blue text-sm">{item.name}</h4>
+                                            <p className="text-xs text-muted-foreground">{item.description}</p>
                                         </div>
                                     </div>
                                 </div>
                             ))}
+                        </div>
+
+                        {/* Right column - Financial images side by side */}
+                        <div className="md:w-[70%] flex flex-col sm:flex-row gap-4 items-center">
+                            <div className="flex-1 overflow-hidden rounded-3xl border border-border shadow-sm">
+                                <img
+                                    src="https://res.cloudinary.com/dpzywidxy/image/upload/v1772063810/Financial-1_m2dhpk.jpg"
+                                    alt="Financial transparency document 1"
+                                    className="w-full h-auto object-cover rounded-3xl"
+                                />
+                            </div>
+                            <div className="flex-1 overflow-hidden rounded-3xl border border-border shadow-sm">
+                                <img
+                                    src="https://res.cloudinary.com/dpzywidxy/image/upload/v1772063810/Financial-2_s9pehb.jpg"
+                                    alt="Financial transparency document 2"
+                                    className="w-full h-auto object-cover rounded-3xl"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
